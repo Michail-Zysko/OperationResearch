@@ -73,11 +73,11 @@
 }
 
 #Table td:hover {
-    background: red;
+    background:  rgba(255, 0, 0, 0.6)
 }
 
 #Table td:hover:before {
-    background-color: rgba(255, 255, 0, 0.85);
+    background-color: rgba(255, 255, 0, 0.6);
     content: '';
     height: 100%;
     left: -500px;
@@ -88,7 +88,7 @@
 }
 
 #Table td:hover:after {
-    background-color: rgba(255, 255, 0, 0.85);
+    background-color: rgba(255, 255, 0, 0.6);
     content: '';
     height: 500px;
     left: 0;
