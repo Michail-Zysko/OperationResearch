@@ -1,5 +1,4 @@
 import { AddEdge, DrawLine } from './DrawLine.js';
-import { MinTreeSearch } from './alghoritm.js'
 
 export let Edges = new Array;
 export let Graph = new Array;
