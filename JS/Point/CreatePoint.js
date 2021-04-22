@@ -5,12 +5,16 @@ export function CreatePoint(Graph, e, CurrentName) {
         visited: false,
         X: e.pageX,
         Y: e.pageY,
+        // ChangeWidth(older, current, left) {
+        //     return Math.round(parseInt(left) * parseInt(current) / parseInt(older));
+        // }
     });
     document.getElementById("point_count").textContent = "Amount of points: " + Graph.length;
 
     let point = document.createElement('div');
     point.setAttribute("name", CurrentName);
     point.id = "Point";
+    point.className = "point";
 
     point.style.left = e.pageX - 5 + 'px';
     point.style.top = e.pageY - 5 + 'px';

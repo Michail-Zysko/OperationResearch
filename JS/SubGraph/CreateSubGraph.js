@@ -51,9 +51,17 @@ export function ChangeTable(Arr, Graph) {
         for (let j = 0; j < n; j++) {
             let td = document.createElement("td");
             if (i == 0 && j != 0) {
+                td.style.position = "sticky";
+                td.style.top = 0 + "px";
+                td.style.backgroundColor = 'green';
+                td.style.zIndex = 10;
                 td.innerHTML = Graph[j - 1].name;
             }
             else if (j == 0 && i != 0) {
+                td.style.position = "sticky";
+                td.style.backgroundColor = 'green';
+                td.style.left = 0 + "px";
+                td.style.zIndex = 10;
                 td.innerHTML = Graph[i - 1].name;
             }
             else if (i > 0 && j > 0) {
