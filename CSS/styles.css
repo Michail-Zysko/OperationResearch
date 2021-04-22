@@ -138,6 +138,7 @@
 .info {
     transition: all 0.3s ease;
     background-color: rgb(159, 159, 159, 0.5);
+    max-width: 350px;
     width: 38vh;
     height: 38vh;
     border-radius: 4%;
