@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+#Left {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 65%;
+    height: 100%;
+}
+
+#Right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+}
+
+#Center {
+    position: absolute;
+    left: 65%;
+    top: 0;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#top {
+    height: 8vh;
+}
+
+#midle {
+    height: 83vh;
+}
+
+#bottom {
+    height: 7vh;
+}
+
+#Draw {
+    transition: all 0.3s ease;
+    height: 83vh;
+    border-radius: 3%;
+    background-color: rgb(97, 97, 97, 0.7);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    /* Параметры тени */
+}
+
+#box {
+    overflow: auto;
+    margin: 5% 0% 0% 9%;
+    max-width: 31vh;
+    max-height: 33vh;
+}
+
+#Table {
+    table-layout: fixed;
+    font-size: 14px;
+    width: 90%;
+    height: 90%;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+#Table tr, td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    position: relative;
+}
+#Table td:hover {
+	background: red;
+}
+ 
+#Table td:hover:before { 
+	background-color:rgba(255, 255, 0, 0.3);
+	content: '';  
+	height: 100%;
+	left: -500px;
+	position: absolute;  
+	top: 0;
+	width: 500px;   
+	z-index: -2;        
+}
+ 
+#Table td:hover:after { 
+	background-color:rgba(255, 255, 0, 0.3);
+	content: '';  
+	height: 500px;    
+	left: 0;
+	position: absolute;  
+	top: -500px;
+	width: 100%;
+	z-index: -1;        
+}
+
+#Point {
+    position: fixed;
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#Line {
+    background-color: yellow;
+    transform-origin: top left;
+    position: fixed;
+    height: 2px;
+    z-index: 1;
+}
+
+#TextLength {
+    position: fixed;
+    text-align: center;
+    padding-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #303030;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 3;
+    font-size: 16px;
+}
+
+.info_point:hover {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.info {
+    transition: all 0.3s ease;
+    background-color: rgb(159, 159, 159, 0.5);
+    width: 38vh;
+    height: 38vh;
+    border-radius: 4%;
+    padding-top: 10px;
+    font-size: 22px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    /* Параметры тени */
+}
+
+.info_point {
+    transition: all 0.3s ease;
+    background-color: rgb(159, 159, 159, 0.5);
+    max-width: 350px;
+    width: 38vh;
+    height: 38vh;
+    border-radius: 4%;
+    margin-top: 3vh;
+    padding-top: 10px;
+    font-size: 22px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+    /* Параметры тени */
+}
+
+.text {
+    font-size: 20px;
+    float: left;
+    padding-left: 30px;
+}
+
+.block {
+    margin-top: 10px;
+}
+
+.caption {
+    position: fixed;
+    z-index: 3;
+}
+
+.vl {
+    width: 1px;
+    height: 70vh;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #303030;
+    user-select: none;
+    color: white;
+}
+
+span {
+    font-family: 'Questrial', sans-serif;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-left: 5%;
+    font-size: 12px;
+    color: rgb(255, 255, 255, 0.6);
+}
+
+a {
+    color: rgb(255, 255, 255, 0.6);
+}
+
+div, span, a, .caption, .footer {
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
