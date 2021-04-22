@@ -65,8 +65,7 @@
     border-style: hidden;
 }
 
-#Table tr,
-td {
+#Table tr, td {
     width: 20px;
     height: 20px;
     border: 1px solid white;
@@ -78,7 +77,7 @@ td {
 }
 
 #Table td:hover:before {
-    background-color: rgba(255, 255, 0, 0.3);
+    background-color: rgba(255, 255, 0, 0.85);
     content: '';
     height: 100%;
     left: -500px;
@@ -89,7 +88,7 @@ td {
 }
 
 #Table td:hover:after {
-    background-color: rgba(255, 255, 0, 0.3);
+    background-color: rgba(255, 255, 0, 0.85);
     content: '';
     height: 500px;
     left: 0;
@@ -212,11 +211,7 @@ a {
     color: rgb(255, 255, 255, 0.6);
 }
 
-div,
-span,
-a,
-.caption,
-.footer {
+div, span, a, .caption, .footer {
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
 }
