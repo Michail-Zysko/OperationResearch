@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-
 #Left {
     position: absolute;
     left: 0;
@@ -66,36 +65,38 @@
     border-style: hidden;
 }
 
-#Table tr, td {
+#Table tr,
+td {
     width: 20px;
     height: 20px;
     border: 1px solid white;
     position: relative;
 }
+
 #Table td:hover {
-	background: red;
+    background: red;
 }
- 
-#Table td:hover:before { 
-	background-color:rgba(255, 255, 0, 0.3);
-	content: '';  
-	height: 100%;
-	left: -500px;
-	position: absolute;  
-	top: 0;
-	width: 500px;   
-	z-index: -2;        
+
+#Table td:hover:before {
+    background-color: rgba(255, 255, 0, 0.3);
+    content: '';
+    height: 100%;
+    left: -500px;
+    position: absolute;
+    top: 0;
+    width: 500px;
+    z-index: -2;
 }
- 
-#Table td:hover:after { 
-	background-color:rgba(255, 255, 0, 0.3);
-	content: '';  
-	height: 500px;    
-	left: 0;
-	position: absolute;  
-	top: -500px;
-	width: 100%;
-	z-index: -1;        
+
+#Table td:hover:after {
+    background-color: rgba(255, 255, 0, 0.3);
+    content: '';
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    z-index: -1;
 }
 
 #Point {
@@ -127,6 +128,7 @@
     border-radius: 50%;
     z-index: 3;
     font-size: 16px;
+    transition: 2s;
 }
 
 .info_point:hover {
@@ -210,7 +212,11 @@ a {
     color: rgb(255, 255, 255, 0.6);
 }
 
-div, span, a, .caption, .footer {
+div,
+span,
+a,
+.caption,
+.footer {
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
 }
