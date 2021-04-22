@@ -1,4 +1,4 @@
-import { Graph } from './AddPoint.js'
+import { Graph } from './Point/AddPoint.js'
 
 export function MinTreeSearch(Edges, Arr) {
 

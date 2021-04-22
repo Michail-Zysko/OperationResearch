@@ -1,5 +1,5 @@
-import { AddPoint } from './AddPoint.js';
-import { RemovePoint } from './RemovePoint.js';
+import { AddPoint } from './Point/AddPoint.js';
+import { RemovePoint } from './Point/RemovePoint.js';
 
 'use strict';
 

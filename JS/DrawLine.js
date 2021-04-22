@@ -1,4 +1,4 @@
-import { Edges, Graph } from './AddPoint.js'
+import { Edges, Graph } from './Point/AddPoint.js'
 
 function ShowLength(event) {
     let TextLength = document.createElement('div');
@@ -12,17 +12,6 @@ function ShowLength(event) {
 
 function HideLength() {
     document.getElementById("TextLength").remove();
-}
-
-export function AddEdge(from, to) {
-    Edges.push({
-        name: from.name + to.name,
-        length: CalcLength(from, to),
-        toY: to.Y,
-        fromX: from.X,
-        fromY: from.Y,
-        toX: to.X,
-    });
 }
 
 export function DrawLine(edge) {
@@ -64,8 +53,4 @@ export function DrawLine(edge) {
     document.getElementById('Draw').appendChild(line);
     line.addEventListener("mouseover", ShowLength);
     line.addEventListener("mouseout", HideLength);
-}
-
-function CalcLength(from, to) {
-    return Math.trunc(Math.sqrt((to.X - from.X) ** 2 + (to.Y - from.Y) ** 2));
 }

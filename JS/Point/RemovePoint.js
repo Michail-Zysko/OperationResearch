@@ -1,6 +1,6 @@
 import { Graph, Edges, CreateMatrix, ChangeTable } from './AddPoint.js';
-import { MinTreeSearch } from './alghoritm.js'
-import { DrawLine } from './DrawLine.js'
+import { MinTreeSearch } from '../Alghoritm.js'
+import { DrawLine } from '../DrawLine.js'
 
 export function RemovePoint(e) {
 
