@@ -1,6 +1,7 @@
-import { Graph, Edges, CreateMatrix, ChangeTable } from './AddPoint.js';
-import { MinTreeSearch } from '../Alghoritm.js'
-import { DrawLine } from '../DrawLine.js'
+import { Graph, Edges } from './AddPoint.js';
+import { CreateMatrix, ChangeTable } from '../SubGraph/CreateSubGraph.js'
+import { AddEdge } from '../Edge/AddEdge.js';
+import { MinTreeSearch } from '../SubGraph/Alghoritm.js'
 
 export function RemovePoint(e) {
 
@@ -36,10 +37,10 @@ export function RemovePoint(e) {
 		point.remove();
 
 		let SubGraph = MinTreeSearch(Edges, CreateMatrix(Graph));
-		ChangeTable(SubGraph);
+		ChangeTable(SubGraph, Graph);
 
 		SubGraph.forEach(element => {
-			DrawLine(element)
+			AddEdge(element, Graph);
 		});
 
 		for (let line of lines) {
