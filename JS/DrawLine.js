@@ -55,7 +55,7 @@ export function DrawLine(edge) {
 
     let angle = (Math.atan((y1 - y) / (x1 - x)) * 180 / Math.PI);
 
-    if ((x1 < x && y1 <= y) || (x1 < x && y1 >= y)) {
+    if ((x1 <= x && y1 <= y) || (x1 < x && y1 > y)) {
         angle -= 180;
     }
 
