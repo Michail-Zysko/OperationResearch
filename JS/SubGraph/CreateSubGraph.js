@@ -50,18 +50,17 @@ export function ChangeTable(Arr, Graph) {
         let tr = document.createElement("tr");
         for (let j = 0; j < n; j++) {
             let td = document.createElement("td");
+            td.style.position = "sticky";
             if (i == 0 && j != 0) {
-                td.style.position = "sticky";
                 td.style.top = 0 + "px";
                 td.style.backgroundColor = 'green';
-                td.style.zIndex = 10;
+                td.style.zIndex = 9;
                 td.innerHTML = Graph[j - 1].name;
             }
             else if (j == 0 && i != 0) {
-                td.style.position = "sticky";
                 td.style.backgroundColor = 'green';
                 td.style.left = 0 + "px";
-                td.style.zIndex = 10;
+                td.style.zIndex = 9;
                 td.innerHTML = Graph[i - 1].name;
             }
             else if (i > 0 && j > 0) {
@@ -76,6 +75,10 @@ export function ChangeTable(Arr, Graph) {
                 td.innerHTML = "-";
             }
             if (j == 0 && i == 0) {
+                td.style.top = 0 + "px";
+                td.style.left = 0 + "px";
+                td.style.backgroundColor = 'rgb(104,104,104)';
+                td.style.zIndex = 10;
                 td.innerHTML = "";
             }
             tr.append(td);

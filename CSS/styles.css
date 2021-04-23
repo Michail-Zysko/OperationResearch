@@ -186,10 +186,6 @@ td {
     background-color: white;
 }
 
-.link:hover {
-    text-decoration: underline;
-}
-
 body {
     background-color: #303030;
     user-select: none;
