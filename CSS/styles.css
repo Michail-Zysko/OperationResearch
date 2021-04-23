@@ -67,7 +67,8 @@
     border-style: hidden;
 }
 
-#Table tr, td {
+#Table tr,
+td {
     width: 20px;
     height: 20px;
     border: 1px solid white;
@@ -79,7 +80,11 @@
 }
 
 #Table td:hover:before {
+<<<<<<< Updated upstream
     background-color: rgba(255, 255, 0, 0.75);
+=======
+    background-color: rgba(255, 255, 0, 0.5);
+>>>>>>> Stashed changes
     content: '';
     height: 100%;
     left: -500px;
@@ -90,7 +95,11 @@
 }
 
 #Table td:hover:after {
+<<<<<<< Updated upstream
     background-color: rgba(255, 255, 0, 0.75);
+=======
+    background-color: rgba(255, 255, 0, 0.5);
+>>>>>>> Stashed changes
     content: '';
     height: 500px;
     left: 0;
@@ -213,7 +222,11 @@ a {
     color: rgb(255, 255, 255, 0.6);
 }
 
-div, span, a, .caption, .footer {
+div,
+span,
+a,
+.caption,
+.footer {
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
 }
