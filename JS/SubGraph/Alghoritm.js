@@ -1,67 +1,60 @@
 import { Graph } from '../Point/AddPoint.js'
 
+'use strict';
+
 export function MinTreeSearch(Edges, Arr) {
 
-    if (Edges.length > 0) {
-        let NewEdge = Edges.slice();
-        NewEdge.sort((a, b) => b.length - a.length);
+    let NewEdge = Edges.slice();
+    NewEdge.sort((a, b) => b.length - a.length); // Сортируем ребра по убыванию
 
-        let result = NewEdge.slice();
+    let result = NewEdge.slice();
 
-        let n = NewEdge.length;
-        let m = Graph.length;
-        let k = 0;
+    let n = NewEdge.length;
+    let m = Graph.length;
+    let k = 0;
 
-        while (n > m - 1) {
-            let Change = ChangeMatrix(Arr, NewEdge[k], true);
+    while (n > m - 1) {
+        let Change = ChangeMatrix(Arr, NewEdge[k], true);
 
-            if (!isGraphConnected(Change, Graph)) {
-                Change = ChangeMatrix(Arr, NewEdge[k], false);
-            }
-            else {
-                result.splice(result.indexOf(NewEdge[k]), 1);
-                n--;
-            }
-            k++;
+        if (!isGraphConnected(Change, Graph)) { // Если удаление ребра приведет к поторе связности графа
+            Change = ChangeMatrix(Arr, NewEdge[k], false);
         }
-
-        return result;
+        else { // Если удаление ребра не приведет к поторе связности графа
+            result.splice(result.indexOf(NewEdge[k]), 1); // Удаляем ненужно ребро
+            n--;
+        }
+        k++;
     }
-    else return [];
+
+    return result; // Получаем минимальное островное дерево
 }
 
-function ChangeMatrix(Arr, obj, del) {
-    let buf = obj.name.split('');
+function ChangeMatrix(Arr, obj, del) { // Изменяем связный список после удаления и в случае неправильного удаления
 
     for (let point of Arr.keys()) {
-        if (point == buf[0]) {
+        if (point == obj.name[0]) {
             let mas = Arr.get(point);
             if (!del) {
-                for (let j = 0; j < Graph.length; j++) {
-                    if (Graph[j].name == buf[1]) mas.push(Graph[j]);
-                }
+                for (let j = 0; j < Graph.length; j++)
+                    if (Graph[j].name == obj.name[1]) mas.push(Graph[j]);
             }
             else {
-                for (let i = 0; i < mas.length; i++) {
-                    if (mas[i].name == buf[1]) mas.splice(i, 1);
-                }
+                for (let i = 0; i < mas.length; i++)
+                    if (mas[i].name == obj.name[1]) mas.splice(i, 1);
             }
         }
     }
 
-
     for (let point of Arr.keys()) {
-        if (point == buf[1]) {
+        if (point == obj.name[1]) {
             let mas = Arr.get(point);
             if (!del) {
-                for (let j = 0; j < Graph.length; j++) {
-                    if (Graph[j].name == buf[0]) mas.push(Graph[j]);
-                }
+                for (let j = 0; j < Graph.length; j++)
+                    if (Graph[j].name == obj.name[0]) mas.push(Graph[j]);
             }
             else {
-                for (let i = 0; i < mas.length; i++) {
-                    if (mas[i].name == buf[0]) mas.splice(i, 1);
-                }
+                for (let i = 0; i < mas.length; i++)
+                    if (mas[i].name == obj.name[0]) mas.splice(i, 1);
             }
         }
     }
@@ -69,25 +62,22 @@ function ChangeMatrix(Arr, obj, del) {
     return Arr;
 }
 
-function isGraphConnected(Arr, Graph) {
+function isGraphConnected(Arr, Graph) { // проверяем граф на связность
 
-    for (let i = 0; i < Arr.size; i++) {
-        for (let j = 0; j < Arr.size; j++) {
-            if (i != j && !bfs(Arr, Graph[i], Graph[j])) {
+    for (let i = 0; i < Arr.size; i++)
+        for (let j = 0; j < Arr.size; j++)
+            if (i != j && !bfs(Arr, Graph[i], Graph[j]))
                 return false;
-            }
-        }
-    }
 
     return true;
 }
 
-function bfs(adj, s, t) {
+function bfs(adj, s, t) { // Алгоритм обхода графа в ширину
     // adj - смежный список
     // s - начальная вершина
     // t - пункт назначения
 
-    Graph.forEach(element => {
+    Graph.forEach(element => { // Все точки не были посещены
         element.visited = false;
     });
 

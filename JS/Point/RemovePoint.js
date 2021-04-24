@@ -1,61 +1,40 @@
 import { Graph, Edges } from './AddPoint.js';
-import { CreateMatrix, ChangeTable } from '../SubGraph/CreateSubGraph.js'
-import { AddEdge } from '../Edge/AddEdge.js';
-import { MinTreeSearch } from '../SubGraph/Alghoritm.js'
+import { CreateSubGraph } from '../SubGraph/CreateSubGraph.js'
+
+'use strict';
 
 export function RemovePoint(e) {
 
-	let point = document.elementFromPoint(e.pageX, e.pageY);
+	let point = document.elementFromPoint(e.pageX, e.pageY); // Берем элемет по месту клика
 
-	if (point.id == "Point") {
+	if (point.id == "Point") { // Если это точка
 
-		let PointName = point.getAttribute("name");
+		let PointName = point.getAttribute("name"); // Получаем имя точки
 
-		document.getElementById(PointName).remove();
+		document.getElementById(PointName)?.remove(); // Удаляем подпись к точке
 
-		Graph.find(function (item, index, array) {
+		Graph.find(function (item, index) { // Т.к. удалили удаляем точку, то удалем ее из графа
 			if (item.name == PointName) {
-				array.splice(index, 1);
+				Graph.splice(index, 1);
 				return true;
 			}
 		});
+		document.getElementById("point_count").innerText = "Amount of points: " + Graph.length; // Изменяем кол-во вершин графа
 
-		for (let i = Edges.length - 1; i > -1; i--) {
+		for (let i = Edges.length - 1; i > -1; i--) // Удаляем ребра графа, которые были связаны с этой точкой
 			if (Edges[i].name.includes(PointName)) {
 				Edges.splice(i, 1);
 			}
-		}
 
-		let lines = document.querySelectorAll('.line');
-
-		for (let line of lines) {
+		for (let line of document.querySelectorAll('.line')) // Удаляем визиуальное отображение ребра
 			if (line.getAttribute("name").includes(PointName)) {
-				line.remove();
+				line?.remove();
 			}
-		}
 
-		point.remove();
+		point?.remove(); // Удаляем визуальное отображение точки
 
-		let SubGraph = MinTreeSearch(Edges, CreateMatrix(Graph));
-		ChangeTable(SubGraph, Graph);
-
-		SubGraph.forEach(element => {
-			AddEdge(element, Graph);
-		});
-
-		for (let line of lines) {
-
-			let result = SubGraph.find(function (item) {
-				if (item.name == line.getAttribute("name"))
-					return true;
-			});
-			if (!result) line.remove();
-		}
-
-		document.getElementById("edge_count").innerText = "Amount of edge: " + SubGraph.length;
-		document.getElementById("Length").innerText = "Average length: " + Math.round(SubGraph.reduce((sum, elem) => sum + elem.length, 0) / 10);
-		document.getElementById("point_count").innerText = "Amount of points: " + Graph.length;
+		CreateSubGraph(Graph, Edges); // Т.к. удалили точку, то исходный граф изменился
 	}
 
-	e.preventDefault();
+	e.preventDefault(); // Чтобы не отображалось контекстное меню
 }

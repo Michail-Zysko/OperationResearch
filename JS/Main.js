@@ -6,8 +6,8 @@ import { RemovePoint } from './Point/RemovePoint.js';
 // let width = document.getElementById("Draw").clientWidth;
 // let height = document.getElementById("Draw").clientWidth;
 
-Draw.addEventListener("click", AddPoint);
-Body.addEventListener("contextmenu", RemovePoint);
+Draw.addEventListener("click", AddPoint); // Добавить точку
+Body.addEventListener("contextmenu", RemovePoint); // Удалить точку
 // window.addEventListener('resize', function (event) {
 
 //     for (let point of document.querySelectorAll('.point'))

@@ -65,8 +65,7 @@
     border-style: hidden;
 }
 
-#Table tr,
-td {
+#Table tr, td {
     width: 20px;
     height: 20px;
     border: 1px solid white;
@@ -128,7 +127,6 @@ td {
     border-radius: 50%;
     z-index: 3;
     font-size: 16px;
-    transition: 2s;
 }
 
 .info_point:hover {
@@ -208,11 +206,7 @@ a {
     color: rgb(255, 255, 255, 0.6);
 }
 
-div,
-span,
-a,
-.caption,
-.footer {
+div, span, a, .caption, .footer {
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
 }

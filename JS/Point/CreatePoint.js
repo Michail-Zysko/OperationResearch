@@ -1,7 +1,9 @@
-export function CreatePoint(Graph, e, CurrentName) {
+'use strict';
 
-    Graph.push({
-        name: CurrentName,
+export function CreatePoint(Graph, e, currentName) {
+
+    Graph.push({ // Добовляем вершину в граф
+        name: currentName,
         visited: false,
         X: e.pageX,
         Y: e.pageY,
@@ -9,26 +11,23 @@ export function CreatePoint(Graph, e, CurrentName) {
         //     return Math.round(parseInt(left) * parseInt(current) / parseInt(older));
         // }
     });
-    document.getElementById("point_count").textContent = "Amount of points: " + Graph.length;
+    document.getElementById("point_count").textContent = "Amount of points: " + Graph.length; // меняем кол-во вершин 
 
-    let point = document.createElement('div');
-    point.setAttribute("name", CurrentName);
+
+    let point = document.createElement('div'); // Создаем точку
+    point.setAttribute("name", currentName);
     point.id = "Point";
-    point.className = "point";
-
     point.style.left = e.pageX - 5 + 'px';
     point.style.top = e.pageY - 5 + 'px';
 
-    let caption = document.createElement('div');
-    caption.textContent = CurrentName;
+    let caption = document.createElement('div'); // Создаем подпись к ней
+    caption.textContent = caption.id = currentName;
     caption.className = "caption";
-    caption.id = CurrentName;
-
     caption.style.left = e.pageX - 6 + 'px';
     caption.style.top = e.pageY - 30 + 'px';
 
-    document.getElementById('Draw').appendChild(point);
-    document.getElementById('Draw').appendChild(caption);
+    document.getElementById('Draw').appendChild(point);   // Отображаем элемент
+    document.getElementById('Draw').appendChild(caption); // Отображаем элемент
 
-    return CurrentName = String.fromCodePoint(CurrentName.codePointAt(0) + 1);
+    return String.fromCodePoint(currentName.codePointAt(0) + 1); // Изменяем на след букву
 }
