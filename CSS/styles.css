@@ -1,58 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
-#Left {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 65%;
-    height: 100%;
-}
 
-#Right {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 25%;
-    height: 100%;
-}
-
-#Center {
-    position: absolute;
-    left: 65%;
-    top: 0;
-    width: 10%;
-    height: 100%;
+header {
+    margin: 0% 3% 0% 3%;
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-#top {
+    flex-direction: row;
     height: 8vh;
 }
 
-#midle {
+main {
     height: 83vh;
+    margin: 0% 3% 0% 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }
 
-#bottom {
+footer {
+    margin: 1% 3% 0% 8%;
     height: 7vh;
+    font-size: 12px;
+    color: rgb(255, 255, 255, 0.6);
+}
+
+#Information {
+    flex: 1 1 25%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 22px;
 }
 
 #Draw {
+    flex: 3 1 70%;
     transition: all 0.3s ease;
-    height: 83vh;
+    height: 82vh;
     border-radius: 3%;
     background-color: rgb(97, 97, 97, 0.7);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    /* Параметры тени */
 }
 
 #box {
     overflow: auto;
-    margin: 5% 0% 0% 9%;
-    max-width: 31vh;
+    margin: 5% 10% 5% 10%;
+    max-width: 34vh;
     max-height: 33vh;
 }
 
@@ -84,7 +78,7 @@
     position: absolute;
     top: 0;
     width: 500px;
-    z-index: -2;
+    z-index: -1;
 }
 
 #Table td:hover:after {
@@ -118,9 +112,7 @@
 #TextLength {
     position: fixed;
     text-align: center;
-    padding-top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 10px 5px 0px 5px;
     background-color: #303030;
     width: 30px;
     height: 30px;
@@ -138,38 +130,25 @@
 .info {
     transition: all 0.3s ease;
     background-color: rgb(159, 159, 159, 0.5);
-    max-width: 350px;
-    width: 38vh;
     height: 38vh;
     border-radius: 4%;
     padding-top: 10px;
-    font-size: 22px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    /* Параметры тени */
 }
 
 .info_point {
     transition: all 0.3s ease;
     background-color: rgb(159, 159, 159, 0.5);
-    max-width: 350px;
-    width: 38vh;
     height: 38vh;
     border-radius: 4%;
     margin-top: 3vh;
     padding-top: 10px;
-    font-size: 22px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-    /* Параметры тени */
 }
 
 .text {
     font-size: 20px;
     float: left;
-    padding-left: 30px;
-}
-
-.block {
-    margin-top: 10px;
 }
 
 .caption {
@@ -178,28 +157,18 @@
 }
 
 .vl {
+    margin-left: 5%;
+    margin-right: 5%;
     width: 1px;
     height: 70vh;
-    border-radius: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 body {
+    margin: 0px;
     background-color: #303030;
     user-select: none;
     color: white;
-}
-
-span {
-    font-family: 'Questrial', sans-serif;
-    font-size: 21px;
-    letter-spacing: 2px;
-}
-
-footer {
-    margin-left: 5%;
-    font-size: 12px;
-    color: rgb(255, 255, 255, 0.6);
 }
 
 a {
