@@ -5,14 +5,16 @@
     <meta charset="UTF-16">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/general.css">
+    <link rel="stylesheet" href="CSS/desctop.css">
+    <link rel="stylesheet" href="CSS/mobile.css">
     <title>Вариант 49</title>
 </head>
 
 <body id="Body">
-    <header>
-        <span style="flex: 3 1 70% ;display : block;">
-            <div style="display: flex; justify-content: center;  font-size: 21px;">
+    <main>
+        <div class="LeftColumn">
+            <div id="Instruction">
                 <span style="margin-right: 3%;">
                     mbLeft - add point
                 </span>
@@ -21,23 +23,25 @@
                     mbRight - remove point
                 </span>
             </div>
-        </span>
-        <div style="width: 1px; margin-left: 5%; margin-right: 5%;  display : block"></div>
-        <div style="flex: 1 1 25%; display : block;"></div>
-    </header>
-    <main>
-        <div id="Draw"></div>
-        <div class="vl"></div>
-        <div style="flex: 1 1 25%;">
+            <div id="Draw"></div>
+        </div>
+
+
+        <div class="RightColumn">
+
+            <div class="hl"></div>
+            <div class="vl"></div>
+
             <div id="Information">
                 <div class=" info">
                     <div style="margin-top: 5px">Information</div>
-                    <ul type="disc" style="margin: 10px 0 0 10px;">
-                        <li class="text" id="Length">Average length: 0</li>
-                        <li class="text" id="point_count">Amount of points: 0</li>
-                        <li class="text" id="edge_count">Amount of edge: 0 </li>
-                    </ul>
+                    <div style="margin: 10px 0 0 10px; text-align: left;">
+                        <div class="text" id="Length">Average length: 0</div>
+                        <div class="text" id="point_count">Amount of points: 0</div>
+                        <div class="text" id="edge_count">Amount of edge: 0 </div>
+                    </div>
                 </div>
+                <div class="vl1"></div>
                 <div class="info_point" id="ShowTable">
                     <div>Distance table</div>
                     <div id="box"></div>

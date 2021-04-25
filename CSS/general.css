@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+#Point {
+    position: fixed;
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#Line {
+    background-color: yellow;
+    transform-origin: top left;
+    position: fixed;
+    height: 2px;
+    z-index: 1;
+}
+
+#Instruction{
+    text-align: center;
+}
+
+#TextLength {
+    position: fixed;
+    text-align: center;
+    padding: 10px 5px 0px 5px;
+    background-color: #303030;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    z-index: 3;
+    font-size: 16px;
+}
+
+#Table {
+    table-layout: fixed;
+    font-size: 14px;
+    width: 90%;
+    height: 90%;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+#Table tr, td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    position: relative;
+}
+
+#Table td:hover {
+    background: red;
+}
+
+#Table td:hover:before {
+    background-color: rgba(255, 255, 0, 0.5);
+    content: '';
+    height: 100%;
+    left: -500px;
+    position: absolute;
+    top: 0;
+    width: 500px;
+    z-index: -1;
+}
+
+#Table td:hover:after {
+    background-color: rgba(255, 255, 0, 0.5);
+    content: '';
+    height: 500px;
+    left: 0;
+    position: absolute;
+    top: -500px;
+    width: 100%;
+    z-index: -1;
+}
+
+.text {
+    font-size: 20px;
+    margin-left: 25px;
+    float: left;
+}
+.caption {
+    position: fixed;
+    z-index: 3;
+}
+
+body {
+    margin: 0px;
+    background-color: #303030;
+    user-select: none;
+    color: white;
+}
+
+a {
+    color: rgb(255, 255, 255, 0.6);
+}
+
+div, span, a, .caption, .footer {
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 2px;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
