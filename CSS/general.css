@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
 #Point {
-    position: fixed;
+    position: absolute;
     background-color: yellow;
     width: 10px;
     height: 10px;
@@ -14,7 +14,7 @@
 #Line {
     background-color: yellow;
     transform-origin: top left;
-    position: fixed;
+    position: absolute;
     height: 2px;
     z-index: 1;
 }
@@ -83,7 +83,7 @@
     float: left;
 }
 .caption {
-    position: fixed;
+    position: absolute;
     z-index: 3;
 }
 
